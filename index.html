@@ -1,0 +1,233 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduTech Academy</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body class="font-sans text-gray-800 bg-gradient-to-br from-blue-50 to-white">
+
+  <!-- Navbar -->
+  <header class="fixed w-full bg-white/80 backdrop-blur z-50 shadow">
+    <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
+      <h1 class="text-2xl font-bold text-blue-700">EduTech Academy</h1>
+      <nav>
+        <ul class="flex gap-6 text-gray-700 font-medium">
+          <li><a href="#home" class="hover:text-blue-600">Home</a></li>
+          <li><a href="#about" class="hover:text-blue-600">About</a></li>
+          <li><a href="#courses" class="hover:text-blue-600">Courses</a></li>
+          <li><a href="#teachers" class="hover:text-blue-600">Teachers</a></li>
+          <li><a href="#blog" class="hover:text-blue-600">Blog</a></li>
+          <li><a href="#contact" class="hover:text-blue-600">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="h-screen flex flex-col justify-center items-center text-center bg-gradient-to-r from-blue-400 to-purple-500 text-white">
+    <h2 class="text-4xl md:text-6xl font-extrabold mb-4">Learn, Grow, and Innovate</h2>
+    <p class="text-lg md:text-2xl mb-6 max-w-xl">EduTech Academy brings together schools, online courses, and knowledge-sharing blogs in one modern platform.</p>
+    <a href="#courses" class="px-6 py-3 bg-white text-blue-600 rounded-lg font-semibold shadow-lg hover:bg-blue-100 transition">Explore Courses</a>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-20 px-4 max-w-7xl mx-auto">
+    <div class="md:flex md:gap-12 items-center">
+      <div class="md:w-1/2 mb-8 md:mb-0" data-sr>
+        <img src="images/about.jpg" alt="About EduTech" class="rounded-xl shadow-lg w-full">
+      </div>
+      <div class="md:w-1/2" data-sr>
+        <h3 class="text-3xl font-bold text-blue-700 mb-4">About EduTech Academy</h3>
+        <p class="text-gray-700 mb-4">EduTech Academy combines traditional school values with cutting-edge online learning solutions. Our mission is to make education accessible, interactive, and future-ready.</p>
+        <p class="text-gray-700">From primary school classes to advanced courses and a knowledge-sharing blog, our platform is designed for students, teachers, and lifelong learners.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Courses Section -->
+  <section id="courses" class="py-20 bg-blue-50">
+    <div class="text-center mb-12">
+      <h3 class="text-3xl font-bold text-blue-700 mb-4">Our Courses</h3>
+      <p class="text-gray-700 max-w-xl mx-auto">Interactive online courses covering technology, science, arts, and more, taught by expert instructors.</p>
+    </div>
+
+    <!-- Swiper Slider -->
+    <div class="swiper mySwiper max-w-6xl mx-auto">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide p-4 bg-white rounded-xl shadow-lg">
+          <img src="images/course1.jpg" alt="Course 1" class="rounded-lg mb-4">
+          <h4 class="text-xl font-bold text-blue-600 mb-2">Web Development Bootcamp</h4>
+          <p class="text-gray-600">Learn HTML, CSS, JavaScript, and modern frameworks to build real-world applications.</p>
+        </div>
+        <div class="swiper-slide p-4 bg-white rounded-xl shadow-lg">
+          <img src="images/course2.jpg" alt="Course 2" class="rounded-lg mb-4">
+          <h4 class="text-xl font-bold text-blue-600 mb-2">Data Science & AI</h4>
+          <p class="text-gray-600">Dive into Python, machine learning, and AI concepts to analyze and predict real-world data.</p>
+        </div>
+        <div class="swiper-slide p-4 bg-white rounded-xl shadow-lg">
+          <img src="images/course3.jpg" alt="Course 3" class="rounded-lg mb-4">
+          <h4 class="text-xl font-bold text-blue-600 mb-2">Digital Marketing</h4>
+          <p class="text-gray-600">Master SEO, social media, and online advertising to grow businesses in the digital era.</p>
+        </div>
+      </div>
+      <!-- Navigation -->
+      <div class="swiper-button-next text-blue-700"></div>
+      <div class="swiper-button-prev text-blue-700"></div>
+    </div>
+  </section>
+
+  <!-- Teachers Section -->
+  <section id="teachers" class="py-20 px-4 max-w-7xl mx-auto">
+    <div class="text-center mb-12">
+      <h3 class="text-3xl font-bold text-blue-700 mb-4">Meet Our Teachers</h3>
+      <p class="text-gray-700 max-w-xl mx-auto">Dedicated educators passionate about teaching and mentoring students across disciplines.</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-white rounded-xl shadow-lg p-6 text-center" data-sr>
+        <img src="images/teacher1.jpg" alt="Teacher 1" class="w-32 h-32 rounded-full mx-auto mb-4">
+        <h4 class="font-bold text-blue-600 mb-1">Dr. Sarah Johnson</h4>
+        <p class="text-gray-600">Computer Science</p>
+      </div>
+      <div class="bg-white rounded-xl shadow-lg p-6 text-center" data-sr>
+        <img src="images/teacher2.jpg" alt="Teacher 2" class="w-32 h-32 rounded-full mx-auto mb-4">
+        <h4 class="font-bold text-blue-600 mb-1">Mr. Alex Martinez</h4>
+        <p class="text-gray-600">Mathematics & AI</p>
+      </div>
+      <div class="bg-white rounded-xl shadow-lg p-6 text-center" data-sr>
+        <img src="images/teacher3.jpg" alt="Teacher 3" class="w-32 h-32 rounded-full mx-auto mb-4">
+        <h4 class="font-bold text-blue-600 mb-1">Ms. Emily Chen</h4>
+        <p class="text-gray-600">Digital Marketing</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Section -->
+  <section id="blog" class="py-20 bg-blue-50 px-4">
+    <div class="text-center mb-12">
+      <h3 class="text-3xl font-bold text-blue-700 mb-4">Latest Blog Posts</h3>
+      <p class="text-gray-700 max-w-xl mx-auto">Insights, tips, and trends in education, tech, and learning strategies.</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden" data-sr>
+        <img src="images/blog1.jpg" alt="Blog 1" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h4 class="font-bold text-blue-600 mb-2">Top 10 Learning Apps for Students</h4>
+          <p class="text-gray-600 text-sm">Boost your productivity and learning with these must-have apps for students in 2026.</p>
+        </div>
+      </div>
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden" data-sr>
+        <img src="images/blog2.jpg" alt="Blog 2" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h4 class="font-bold text-blue-600 mb-2">AI in Education: Benefits & Challenges</h4>
+          <p class="text-gray-600 text-sm">Explore how AI is transforming classrooms and online learning environments today.</p>
+        </div>
+      </div>
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden" data-sr>
+        <img src="images/blog3.jpg" alt="Blog 3" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h4 class="font-bold text-blue-600 mb-2">Effective Online Course Design Tips</h4>
+          <p class="text-gray-600 text-sm">Learn the secrets to creating engaging and high-quality online courses for your students.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+w  <section id="contact" class="py-20 px-4 max-w-3xl mx-auto">
+    <div class="text-center mb-12">
+      <h3 class="text-3xl font-bold text-blue-700 mb-4">Get in Touch</h3>
+      <p class="text-gray-700">Have questions? Reach out to our team and we’ll help you get started.</p>
+    </div>
+    <form class="bg-white rounded-xl shadow-lg p-8 space-y-4">
+      <input type="text" placeholder="Full Name" class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-blue-400 outline-none">
+      <input type="email" placeholder="Email" class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-blue-400 outline-none">
+      <textarea placeholder="Message" class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-blue-400 outline-none h-32"></textarea>
+      <button type="submit" class="w-full bg-blue-600 text-white rounded-lg py-3 font-semibold hover:bg-blue-700 transition">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-blue-700 text-white py-6 text-center">
+    <p>© 2026 EduTech Academy. All rights reserved.</p>
+  </footer>
+
+  <!-- Swiper & ScrollReveal Scripts -->
+  <script>
+    // Initialize Swiper
+    const swiper = new Swiper(".mySwiper", {
+      slidesPerView: 1,
+      spaceBetween: 20,
+      loop: true,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      breakpoints: {
+        768: { slidesPerView: 2 },
+        1024: { slidesPerView: 3 },
+      },
+    });
+
+    // ScrollReveal Animations
+    ScrollReveal().reveal('[data-sr]', {
+      distance: '50px',
+      duration: 1000,
+      easing: 'ease-in-out',
+      origin: 'bottom',
+      interval: 200,
+    });
+
+    // GSAP Hero Animation
+    gsap.from("#home h2", {y: -50, opacity: 0, duration: 1, ease: "power2.out"});
+    gsap.from("#home p", {y: 20, opacity: 0, duration: 1, delay: 0.5});
+    gsap.from("#home a", {scale: 0, opacity: 0, duration: 1, delay: 1, ease: "elastic.out(1, 0.5)"});
+  </script>
+
+</body>
+</html>
+<!-- Hero Section -->
+<section id="home" class="h-screen flex flex-col justify-center items-center text-center bg-gradient-to-r from-blue-400 to-purple-500 text-white relative overflow-hidden">
+  <!-- Book Image -->
+  <img src="images/book.png" alt="Floating Book" id="floatingBook" class="absolute right-10 bottom-20 w-32 md:w-48">
+
+  <h2 class="text-4xl md:text-6xl font-extrabold mb-4 z-10">Learn, Grow, and Innovate</h2>
+  <p class="text-lg md:text-2xl mb-6 max-w-xl z-10">EduTech Academy brings together schools, online courses, and knowledge-sharing blogs in one modern platform.</p>
+  <a href="#courses" class="px-6 py-3 bg-white text-blue-600 rounded-lg font-semibold shadow-lg hover:bg-blue-100 transition z-10">Explore Courses</a>
+</section>
+
+<script>
+  // Floating book animation with GSAP
+  gsap.to("#floatingBook", {
+    y: -20,
+    repeat: -1,
+    yoyo: true,
+    ease: "power1.inOut",
+    duration: 2
+  });
+</script>
+<!-- About Section -->
+<section id="about" class="py-20 px-4 max-w-7xl mx-auto">
+  <div class="md:flex md:gap-12 items-center">
+    <div class="md:w-1/2 mb-8 md:mb-0" data-sr>
+      <img src="images/about.jpg" alt="About EduTech" class="rounded-xl shadow-lg w-full">
+    </div>
+    <div class="md:w-1/2" data-sr>
+      <h3 class="text-3xl font-bold text-blue-700 mb-4">About EduTech Academy</h3>
+      <p class="text-gray-700 mb-4">
+        EduTech Academy was founded by <strong>Anum Daniel Laryea</strong>, a visionary educator dedicated to modernizing learning. With a passion for combining traditional school values and cutting-edge technology, Anum has created a platform where students, teachers, and lifelong learners can thrive together.
+      </p>
+      <p class="text-gray-700 mb-4">
+        Under Anum Daniel Laryea’s leadership, EduTech Academy integrates classroom education, online courses, and insightful blogs, making learning accessible, interactive, and future-ready.
+      </p>
+      <p class="text-gray-700">
+        From primary school classes to advanced courses, Anum ensures that every learner has the tools, guidance, and inspiration to succeed in a fast-evolving world.
+      </p>
+    </div>
+  </div>
+</section>
