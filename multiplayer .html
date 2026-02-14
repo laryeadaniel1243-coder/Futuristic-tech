@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BrainBoost Multiplayer</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gradient-to-br from-indigo-700 via-purple-700 to-pink-600 min-h-screen flex items-center justify-center p-4">
+
+<div class="bg-white rounded-3xl shadow-2xl w-full max-w-md p-6">
+
+<h1 class="text-2xl font-bold text-center text-indigo-600 mb-4">
+🌍 Multiplayer Room
+</h1>
+
+<!-- CREATE ROOM -->
+<div class="mb-4">
+<button onclick="createRoom()"
+class="bg-indigo-600 text-white w-full py-2 rounded mb-2">
+🎮 Create New Room
+</button>
+
+<div id="roomDisplay" class="hidden text-center">
+<p class="font-semibold">Room ID:</p>
+<p id="generatedRoomId" class="text-lg font-bold text-indigo-700"></p>
+
+<button onclick="copyRoomId()"
+class="bg-gray-800 text-white px-4 py-1 mt-2 rounded">
+Copy Room ID
+</button>
+</div>
+</div>
+
+<hr class="my-4">
+
+<!-- JOIN ROOM -->
+<input id="roomInput"
+placeholder="Enter Room ID"
+class="border p-2 w-full mb-2 rounded">
+
+<button onclick="joinRoom()"
+class="bg-green-600 text-white w-full py-2 rounded">
+Join Room
+</button>
+
+</div>
+
+<script type="module">
+
+import { initializeApp } from 
+"https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js";
+
+import { getDatabase, ref, set } 
+from "https://www.gstatic.com/firebasejs/10.7.0/firebase-database.js";
+
+/* 🔥 YOUR FIREBASE CONFIG */
+const firebaseConfig = {
+apiKey:"YOUR_API_KEY",
+authDomain:"YOUR_AUTH_DOMAIN",
+databaseURL:"YOUR_DATABASE_URL",
+projectId:"YOUR_PROJECT_ID"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getDatabase(app);
+
+// 🔥 Generate Random Room ID
+function generateRoomId(){
+const chars="ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+let id="";
+for(let i=0;i<6;i++){
+id+=chars.charAt(Math.floor(Math.random()*chars.length));
+}
+return id;
+}
+
+// CREATE ROOM
+window.createRoom = function(){
+
+const roomId = generateRoomId();
+
+document.getElementById("generatedRoomId").textContent = roomId;
+document.getElementById("roomDisplay").classList.remove("hidden");
+
+// Create room in Firebase
+set(ref(db,"rooms/"+roomId),{
+createdAt: Date.now(),
+players: {}
+});
+
+}
+
+// COPY ROOM ID
+window.copyRoomId = function(){
+const roomId = document.getElementById("generatedRoomId").textContent;
+navigator.clipboard.writeText(roomId);
+alert("Room ID copied!");
+}
+
+// JOIN ROOM
+window.joinRoom = function(){
+const roomId = document.getElementById("roomInput").value.trim().toUpperCase();
+
+if(roomId===""){
+alert("Enter Room ID");
+return;
+}
+
+// Redirect to actual game room
+window.location.href = "room.html?room="+roomId;
+}
+
+</script>
+
+</body>
+</html>
